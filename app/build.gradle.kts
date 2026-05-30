@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.puskal.tiktokcompose"
+    namespace = "com.nigergram.app"
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.puskal.tiktokcompose"
+        applicationId = "com.nigergram.app"
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
@@ -23,7 +23,6 @@ android {
         getByName("debug") {
             isDebuggable = true
             isMinifyEnabled = false
-            initWith(getByName("debug"))
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -32,7 +31,6 @@ android {
         getByName("release") {
             isDebuggable = false
             isMinifyEnabled = true
-            initWith(getByName("release"))
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -59,7 +57,6 @@ android {
         resources.excludes.add("META-INF/**/*")
     }
 }
-
 
 dependencies {
     baseDependencies()
