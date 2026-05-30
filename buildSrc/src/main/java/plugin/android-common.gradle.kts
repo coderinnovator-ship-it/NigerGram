@@ -5,18 +5,20 @@ import org.gradle.api.Project
 import com.android.build.gradle.LibraryExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+// Import your specific dependency functions
+import baseDependencies
+import composeDependencies
+import testDependencies
 
 class AndroidCoreLibraryPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
-            // Apply the necessary plugins
             plugins.apply("com.android.library")
             plugins.apply("org.jetbrains.kotlin.android")
             plugins.apply("org.jetbrains.kotlin.plugin.parcelize")
             plugins.apply("com.google.dagger.hilt.android")
             plugins.apply("kotlin-kapt")
 
-            // Configure Android settings
             configure<LibraryExtension> {
                 compileSdk = AppConfig.compileSdk
                 defaultConfig {
@@ -35,7 +37,6 @@ class AndroidCoreLibraryPlugin : Plugin<Project> {
                 }
             }
 
-            // Apply dependencies
             dependencies {
                 baseDependencies()
                 composeDependencies()
