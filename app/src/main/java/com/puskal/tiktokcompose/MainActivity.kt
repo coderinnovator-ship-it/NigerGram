@@ -17,11 +17,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 private object Destinations {
     const val Home = "HOME"
     const val Feed = "FEED"
     const val Sheet = "SHEET"
 }
-
-
