@@ -10,7 +10,8 @@ import com.puskal.core.DestinationRoute.MY_PROFILE_ROUTE
 import com.puskal.theme.R
 
 /**
- * Created by Puskal Khadka on 3/14/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 
 enum class BottomBarDestination(
