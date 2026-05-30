@@ -4,8 +4,13 @@ import AppConfig
 import baseDependencies
 import composeDependencies
 import testDependencies
+import org.gradle.api.JavaVersion
+import java.io.File
 
-
+/**
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
+ */
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -19,7 +24,7 @@ android {
     defaultConfig {
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
-        consumerProguardFiles ("consumer-rules.pro")
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -27,6 +32,7 @@ android {
         debug {}
         release {}
     }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -65,15 +71,13 @@ android {
         }
     }
 }
+
 kapt {
     correctErrorTypes = true
 }
+
 dependencies {
     baseDependencies()
     composeDependencies()
     testDependencies()
 }
-
-
-
-
