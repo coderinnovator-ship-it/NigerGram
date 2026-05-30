@@ -1,83 +1,46 @@
 package plugin
 
-import AppConfig
-import baseDependencies
-import composeDependencies
-import testDependencies
-import org.gradle.api.JavaVersion
-import java.io.File
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import com.android.build.gradle.LibraryExtension
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
-/**
- * Created in Zetra Lab on 05/30/2026.
- * Developed by Zetra Company.
- */
-plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.parcelize")
-    id("com.google.dagger.hilt.android")
-    kotlin("kapt")
-}
+class AndroidCoreLibraryPlugin : Plugin<Project> {
+    override fun apply(project: Project) {
+        with(project) {
+            // Apply the necessary plugins
+            plugins.apply("com.android.library")
+            plugins.apply("org.jetbrains.kotlin.android")
+            plugins.apply("org.jetbrains.kotlin.plugin.parcelize")
+            plugins.apply("com.google.dagger.hilt.android")
+            plugins.apply("kotlin-kapt")
 
-android {
-    compileSdk = AppConfig.compileSdk
-    defaultConfig {
-        minSdk = AppConfig.minSdk
-        targetSdk = AppConfig.targetSdk
-        consumerProguardFiles("consumer-rules.pro")
-    }
+            // Configure Android settings
+            configure<LibraryExtension> {
+                compileSdk = AppConfig.compileSdk
+                defaultConfig {
+                    minSdk = AppConfig.minSdk
+                    targetSdk = AppConfig.targetSdk
+                    consumerProguardFiles("consumer-rules.pro")
+                }
+                
+                compileOptions {
+                    sourceCompatibility = org.gradle.api.JavaVersion.VERSION_1_8
+                    targetCompatibility = org.gradle.api.JavaVersion.VERSION_1_8
+                }
 
-    buildTypes {
-        testBuildType = "debug"
-        debug {}
-        release {}
-    }
-    
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
+                buildFeatures {
+                    compose = true
+                }
+            }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = AppConfig.KotlinCompilerExtension
-    }
-
-    packagingOptions {
-        resources.excludes.apply {
-            add("META-INF/AL2.0")
-            add("META-INF/LGPL2.1")
-        }
-    }
-
-    testOptions {
-        unitTests {
-            isIncludeAndroidResources = true
-        }
-    }
-
-    libraryVariants.all {
-        kotlin.sourceSets {
-            getByName(name) {
-                kotlin.srcDir(File("build/generated/ksp/$name/kotlin"))
+            // Apply dependencies
+            dependencies {
+                baseDependencies()
+                composeDependencies()
+                testDependencies()
             }
         }
     }
-}
-
-kapt {
-    correctErrorTypes = true
-}
-
-dependencies {
-    baseDependencies()
-    composeDependencies()
-    testDependencies()
 }
