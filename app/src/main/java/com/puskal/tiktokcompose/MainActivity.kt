@@ -1,4 +1,4 @@
-package com.puskal.tiktokcompose
+package com.nigergram.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
