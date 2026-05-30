@@ -26,21 +26,21 @@ import com.google.accompanist.navigation.material.ExperimentalMaterialNavigation
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.puskal.core.DestinationRoute.AUTHENTICATION_ROUTE
-import com.puskal.core.DestinationRoute.CAMERA_ROUTE
-import com.puskal.core.DestinationRoute.COMMENT_BOTTOM_SHEET_ROUTE
-import com.puskal.core.DestinationRoute.FORMATTED_COMPLETE_CREATOR_VIDEO_ROUTE
-import com.puskal.core.DestinationRoute.FRIENDS_ROUTE
-import com.puskal.core.DestinationRoute.HOME_SCREEN_ROUTE
-import com.puskal.core.DestinationRoute.INBOX_ROUTE
-import com.puskal.core.DestinationRoute.MY_PROFILE_ROUTE
-import com.puskal.theme.TikTokTheme
-import com.puskal.tiktokcompose.component.BottomBar
-import com.puskal.tiktokcompose.navigation.AppNavHost
+import com.nigergram.core.DestinationRoute.AUTHENTICATION_ROUTE
+import com.nigergram.core.DestinationRoute.CAMERA_ROUTE
+import com.nigergram.core.DestinationRoute.COMMENT_BOTTOM_SHEET_ROUTE
+import com.nigergram.core.DestinationRoute.FORMATTED_COMPLETE_CREATOR_VIDEO_ROUTE
+import com.nigergram.core.DestinationRoute.FRIENDS_ROUTE
+import com.nigergram.core.DestinationRoute.HOME_SCREEN_ROUTE
+import com.nigergram.core.DestinationRoute.INBOX_ROUTE
+import com.nigergram.core.DestinationRoute.MY_PROFILE_ROUTE
+import com.nigergram.theme.TikTokTheme
+import com.nigergram.app.component.BottomBar
+import com.nigergram.app.navigation.AppNavHost
 
 /**
- * Created by Puskal Khadka on 3/14/2023.
- * Cleaned and rebranded for NigerGram with all methods intact.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 @OptIn(
     ExperimentalMaterial3Api::class, ExperimentalMaterialNavigationApi::class,
