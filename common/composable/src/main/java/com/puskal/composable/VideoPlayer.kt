@@ -1,6 +1,6 @@
 package com.puskal.composable
 
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,9 +17,8 @@ import androidx.media3.ui.PlayerView
 import com.puskal.core.utils.FileUtils
 import com.puskal.core.utils.IntentUtils
 import com.puskal.data.model.VideoModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
+@OptIn(ExperimentalFoundationApi::class) // This tells the compiler to allow experimental features
 @Composable
 fun VideoPlayer(
     video: VideoModel,
@@ -49,11 +48,7 @@ fun VideoPlayer(
     }
 
     LaunchedEffect(pagerState.currentPage) {
-        if (pagerState.currentPage == pageIndex) {
-            exoPlayer.playWhenReady = true
-        } else {
-            exoPlayer.playWhenReady = false
-        }
+        exoPlayer.playWhenReady = (pagerState.currentPage == pageIndex)
     }
 
     Box(modifier = Modifier
