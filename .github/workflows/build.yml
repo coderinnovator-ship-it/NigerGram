@@ -1,8 +1,11 @@
 name: NigerGram Build Pipeline
 
-# This stops it from running automatically on every single push!
+# This forces the script to run automatically every time you make a push!
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
   build:
@@ -17,7 +20,7 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '17'
-        cache: 'gradle' # This saves hundreds of megabytes and slashes build time significantly!
+        cache: 'gradle'
 
     - name: Grant Execute Permission for Gradle Wrapper
       run: chmod +x gradlew
