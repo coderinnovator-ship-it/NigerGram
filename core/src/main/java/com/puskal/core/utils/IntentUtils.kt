@@ -1,15 +1,16 @@
-package com.puskal.core.utils
+package com.nigergram.core.utils
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import android.util.Log
-import com.puskal.core.AppContract.Type.INSTAGRAM
-import com.puskal.core.AppContract.Type.YOUTUBE
+import com.nigergram.core.AppContract.Type.INSTAGRAM
+import com.nigergram.core.AppContract.Type.YOUTUBE
 
 /**
- * Created by Puskal Khadka on 3/24/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 object IntentUtils {
     fun Context.share(
