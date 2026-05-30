@@ -1,4 +1,4 @@
-package com.puskal.tiktokcompose.component
+package com.nigergram.app.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
-import com.puskal.tiktokcompose.navigation.BottomBarDestination
+import com.nigergram.app.navigation.BottomBarDestination
 
 /**
  * Created in Zetra Lab on 05/30/2026.
