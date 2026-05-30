@@ -14,7 +14,6 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
-// Ensure these paths match your folder structure exactly
 import com.puskal.core.utils.FileUtils
 import com.puskal.core.utils.IntentUtils
 import com.puskal.data.model.VideoModel
@@ -38,8 +37,7 @@ fun VideoPlayer(
         }
     }
 
-    // CHECK THIS LINE: Replace 'videoUrl' with the actual field name from VideoModel.kt
-    DisposableEffect(video.videoUrl) { 
+    DisposableEffect(video.videoUrl) {
         val mediaItem = MediaItem.fromUri(video.videoUrl)
         exoPlayer.setMediaItem(mediaItem)
         exoPlayer.prepare()
@@ -48,4 +46,29 @@ fun VideoPlayer(
             exoPlayer.release()
         }
     }
-    // ... rest of the code ...
+
+    LaunchedEffect(pagerState.currentPage) {
+        exoPlayer.playWhenReady = (pagerState.currentPage == pageIndex)
+    }
+
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .pointerInput(Unit) {
+            detectTapGestures(
+                onTap = { onSingleTap(exoPlayer) },
+                onDoubleTap = { offset -> onDoubleTap(exoPlayer, offset) }
+            )
+        }
+    ) {
+        AndroidView(
+            factory = { ctx ->
+                PlayerView(ctx).apply {
+                    player = exoPlayer
+                    useController = false
+                    resizeMode = androidx.media3.ui.AspectRatioFrameLayout.RESIZE_MODE_ZOOM
+                }
+            },
+            modifier = Modifier.fillMaxSize()
+        )
+    }
+}
