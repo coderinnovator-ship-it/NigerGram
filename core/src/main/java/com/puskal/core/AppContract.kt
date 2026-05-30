@@ -1,7 +1,8 @@
-package com.puskal.core
+package com.nigergram.core
 
 /**
- * Created by Puskal Khadka on 3/15/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 object AppContract {
     object Type {
