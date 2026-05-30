@@ -1,13 +1,13 @@
-package com.puskal.core.utils
+package com.nigergram.core.utils
 
 import android.content.res.AssetFileDescriptor
 import android.graphics.Bitmap
 import android.media.MediaMetadataRetriever
 import android.os.Build
 
-
 /**
- * Created by Puskal Khadka on 3/16/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 object FileUtils {
 
