@@ -1,20 +1,20 @@
-package com.puskal.tiktokcompose.navigation
+package com.nigergram.app.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.puskal.authentication.authenticationNavGraph
-import com.puskal.cameramedia.cameraMediaNavGraph
-import com.puskal.commentlisting.commentListingNavGraph
-import com.puskal.core.DestinationRoute.HOME_SCREEN_ROUTE
-import com.puskal.creatorprofile.creatorProfileNavGraph
-import com.puskal.friends.friendsNavGraph
-import com.puskal.home.homeNavGraph
-import com.puskal.inbox.inboxNavGraph
-import com.puskal.loginwithemailphone.loginEmailPhoneNavGraph
-import com.puskal.myprofile.myProfileNavGraph
-import com.puskal.setting.settingNavGraph
+import com.nigergram.authentication.authenticationNavGraph
+import com.nigergram.cameramedia.cameraMediaNavGraph
+import com.nigergram.commentlisting.commentListingNavGraph
+import com.nigergram.core.DestinationRoute.HOME_SCREEN_ROUTE
+import com.nigergram.creatorprofile.creatorProfileNavGraph
+import com.nigergram.friends.friendsNavGraph
+import com.nigergram.home.homeNavGraph
+import com.nigergram.inbox.inboxNavGraph
+import com.nigergram.loginwithemailphone.loginEmailPhoneNavGraph
+import com.nigergram.myprofile.myProfileNavGraph
+import com.nigergram.setting.settingNavGraph
 
 /**
  * Created in Zetra Lab on 05/30/2026.
@@ -35,7 +35,7 @@ fun AppNavHost(
         homeNavGraph(navController)
         commentListingNavGraph(navController)
         creatorProfileNavGraph(navController)
-        inboxNavGraph(navController)
+        boxNavGraph(navController)
         authenticationNavGraph(navController)
         loginEmailPhoneNavGraph(navController)
         friendsNavGraph(navController)
