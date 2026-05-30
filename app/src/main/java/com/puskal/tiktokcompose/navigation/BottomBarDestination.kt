@@ -1,13 +1,13 @@
-package com.puskal.tiktokcompose.navigation
+package com.nigergram.app.navigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.puskal.core.DestinationRoute.CAMERA_ROUTE
-import com.puskal.core.DestinationRoute.FRIENDS_ROUTE
-import com.puskal.core.DestinationRoute.HOME_SCREEN_ROUTE
-import com.puskal.core.DestinationRoute.INBOX_ROUTE
-import com.puskal.core.DestinationRoute.MY_PROFILE_ROUTE
-import com.puskal.theme.R
+import com.nigergram.core.DestinationRoute.CAMERA_ROUTE
+import com.nigergram.core.DestinationRoute.FRIENDS_ROUTE
+import com.nigergram.core.DestinationRoute.HOME_SCREEN_ROUTE
+import com.nigergram.core.DestinationRoute.INBOX_ROUTE
+import com.nigergram.core.DestinationRoute.MY_PROFILE_ROUTE
+import com.nigergram.theme.R
 
 /**
  * Created in Zetra Lab on 05/30/2026.
