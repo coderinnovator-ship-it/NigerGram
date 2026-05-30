@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "tiktokcompose"
+rootProject.name = "NigerGram"
 include(":app")
 include(":common:theme")
 include(":domain")
