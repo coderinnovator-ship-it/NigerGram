@@ -15,7 +15,8 @@ import androidx.navigation.NavHostController
 import com.puskal.tiktokcompose.navigation.BottomBarDestination
 
 /**
- * Created by Puskal Khadka on 11/25/2022.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 
 @Composable
