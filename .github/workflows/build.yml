@@ -1,10 +1,8 @@
 name: NigerGram Build Pipeline
 
+# This stops it from running automatically on every single push!
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -25,3 +23,9 @@ jobs:
 
     - name: Compile Application with Gradle
       run: ./gradlew assembleDebug --no-daemon
+
+    - name: Upload Build Artifact (APK)
+      uses: actions/upload-artifact@v4
+      with:
+        name: NigerGram-Debug-APK
+        path: app/build/outputs/apk/debug/app-debug.apk
