@@ -2,7 +2,8 @@ import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 /**
- * Created by Puskal Khadka on 3/14/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 fun DependencyHandler.implementation(dependencyNotation: Any): Dependency? =
     add("implementation", dependencyNotation)
@@ -26,22 +27,21 @@ fun DependencyHandler.composeDependencies() {
     implementation(Libraries.Compose.composeRuntime)
     implementation(Libraries.Compose.composeMaterial3)
 
-    //navgation
+    // Navigation
     implementation(Libraries.Naviagtion.navigationCompose)
 
-    //coil
+    // Coil
     implementation(Libraries.Coil.coilCompose)
     implementation(Libraries.Coil.coilVideo)
 
-    //hilt navigation
+    // Hilt Navigation
     implementation(Libraries.Hilt.hiltNavigationCompse)
 
-    //accompanist
+    // Accompanist
     accompanistDependencies()
 
-    //constraint layout
+    // Constraint Layout
     implementation(Libraries.Compose.constraintLayoutCompose)
-
 }
 
 fun DependencyHandler.baseDependencies() {
@@ -106,7 +106,6 @@ fun DependencyHandler.moduleDependencies() {
     FEATURE_SETTING
     FEATURE_CAMERA_MEDIA
 }
-
 
 val DependencyHandler.DOMAIN
     get() = implementation(project(mapOf("path" to ":domain")))
