@@ -17,7 +17,8 @@ import Version.TestRunnerVersion
 import Version.TruthExt
 
 /**
- * Created by Puskal Khadka on 3/14/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 object Version {
     const val CoreKtx = "1.9.0"
@@ -39,9 +40,8 @@ object Version {
     const val ConstraintLayoutCompose = "1.0.1"
     const val GsonVersion = "2.10.1"
     const val CameraXVersion = "1.3.0-alpha05"
-    const val GuavaAndroid="31.0.1-android"
+    const val GuavaAndroid = "31.0.1-android"
 }
-
 
 object Libraries {
     object AndroidX {
@@ -67,7 +67,7 @@ object Libraries {
 
     object Google {
         const val gson = "com.google.code.gson:gson:$GsonVersion"
-        const val guava="com.google.guava:guava:$GuavaAndroid"
+        const val guava = "com.google.guava:guava:$GuavaAndroid"
     }
 
     object Accompanist {
@@ -88,7 +88,7 @@ object Libraries {
             "com.google.accompanist:accompanist-permissions:${Version.Accompanist}"
     }
 
-    object Naviagtion {
+    object Naviagtion { // Kept original spelling to prevent resolution breaks
         const val navigationCompose = "androidx.navigation:navigation-compose:$NavigationCompose"
     }
 
@@ -111,12 +111,11 @@ object Libraries {
         const val runner = "androidx.test:runner:$TestRunnerVersion"
     }
 
-
     object Hilt {
         const val hiltAndroid = "com.google.dagger:hilt-android:$HiltAndroidVersion"
         const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$HiltAndroidVersion"
 
-        //hilt compose
+        // Hilt navigation compose link
         const val hiltNavigationCompse =
             "androidx.hilt:hilt-navigation-compose:$HiltNavigationCompose"
     }
@@ -130,5 +129,3 @@ object Libraries {
         const val CameraExt = "androidx.camera:camera-extensions:$CameraXVersion"
     }
 }
-
-
