@@ -1,4 +1,4 @@
-package com.puskal.tiktokcompose
+package com.nigergram.app
 
 import android.app.Activity
 import android.util.Log
@@ -40,6 +40,7 @@ import com.puskal.tiktokcompose.navigation.AppNavHost
 
 /**
  * Created by Puskal Khadka on 3/14/2023.
+ * Cleaned and rebranded for NigerGram with all methods intact.
  */
 @OptIn(
     ExperimentalMaterial3Api::class, ExperimentalMaterialNavigationApi::class,
@@ -51,8 +52,7 @@ fun RootScreen() {
     val navController = rememberNavController(bottomSheetNavigator)
     val currentBackStackEntryAsState by navController.currentBackStackEntryAsState()
     val currentDestination = currentBackStackEntryAsState?.destination
-    val context= LocalContext.current
-
+    val context = LocalContext.current
 
     val isShowBottomBar = when (currentDestination?.route) {
         HOME_SCREEN_ROUTE, INBOX_ROUTE, COMMENT_BOTTOM_SHEET_ROUTE,
@@ -64,10 +64,10 @@ fun RootScreen() {
         else -> false
     }
 
-    if(currentDestination?.route== HOME_SCREEN_ROUTE){
-       BackHandler {
-           (context as? Activity)?.finish()
-       }
+    if (currentDestination?.route == HOME_SCREEN_ROUTE) {
+        BackHandler {
+            (context as? Activity)?.finish()
+        }
     }
 
     TikTokTheme(darkTheme = darkMode) {
@@ -93,8 +93,6 @@ fun RootScreen() {
                 }
             }
         }
-
-
     }
 }
 
