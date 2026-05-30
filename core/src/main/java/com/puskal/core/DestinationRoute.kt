@@ -1,10 +1,11 @@
-package com.puskal.core
+package com.nigergram.core
 
-import com.puskal.core.DestinationRoute.PassedKey.USER_ID
-import com.puskal.core.DestinationRoute.PassedKey.VIDEO_INDEX
+import com.nigergram.core.DestinationRoute.PassedKey.USER_ID
+import com.nigergram.core.DestinationRoute.PassedKey.VIDEO_INDEX
 
 /**
- * Created by Puskal Khadka on 3/19/2023.
+ * Created in Zetra Lab on 05/30/2026.
+ * Developed by Zetra Company.
  */
 object DestinationRoute {
     const val HOME_SCREEN_ROUTE = "home_screen_route"
@@ -23,11 +24,10 @@ object DestinationRoute {
     const val AUTHENTICATION_ROUTE = "authentication_route"
     const val LOGIN_OR_SIGNUP_WITH_PHONE_EMAIL_ROUTE = "login_signup_phone_email_route"
 
-    const val SETTING_ROUTE="setting_route"
+    const val SETTING_ROUTE = "setting_route"
 
     object PassedKey {
         const val USER_ID = "user_id"
         const val VIDEO_INDEX = "video_index"
     }
 }
-
