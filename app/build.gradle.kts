@@ -59,8 +59,28 @@ android {
 }
 
 dependencies {
+    // Keep custom helper setup tracks intact
     baseDependencies()
     composeDependencies()
     testDependencies()
     moduleDependencies()
+
+    // Explicitly link the local rebranded infrastructure modules to avoid project dependency resolution failures
+    implementation(project(":core"))
+    implementation(project(":common:theme"))
+    implementation(project(":common:composable"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    
+    // Explicitly link all core features
+    implementation(project(":feature:home"))
+    implementation(project(":feature:commentlisting"))
+    implementation(project(":feature:creatorprofile"))
+    implementation(project(":feature:inbox"))
+    implementation(project(":feature:authentication"))
+    implementation(project(":feature:loginwithemailphone"))
+    implementation(project(":feature:friends"))
+    implementation(project(":feature:myprofile"))
+    implementation(project(":feature:setting"))
+    implementation(project(":feature:cameramedia"))
 }
