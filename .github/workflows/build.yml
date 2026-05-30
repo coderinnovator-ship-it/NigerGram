@@ -1,35 +1,30 @@
 name: NigerGram Build Pipeline
 
-# This forces the script to run automatically every time you make a push!
-on:
-  push:
-    branches:
-      - main
-      - master
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Source Code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Java Development Kit (JDK 17) with Cloud Cache
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'zulu'
-        java-version: '17'
-        cache: 'gradle'
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-    - name: Grant Execute Permission for Gradle Wrapper
-      run: chmod +x gradlew
+      - name: Clean Build Cache
+        run: |
+          rm -rf buildSrc/build
+          ./gradlew clean
 
-    - name: Compile Application with Gradle
-      run: ./gradlew assembleDebug --no-daemon
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug --no-daemon
 
-    - name: Upload Build Artifact (APK)
-      uses: actions/upload-artifact@v4
-      with:
-        name: NigerGram-Debug-APK
-        path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
